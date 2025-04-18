@@ -8,7 +8,7 @@ var checkNo = document.getElementById('check-no');
 var checkSp = document.getElementById('check-sp');
 var password = document.getElementById('password');
 function Generate() {
-    const lenght = document.getElementById('lenght').value;
+    const lenght = document.getElementById('lenght').value || 8;
     
     let pass = "";
     let selectedChars = "";
@@ -30,7 +30,7 @@ function Generate() {
         pass += specialChar[Math.floor(Math.random() * specialChar.length)];
     }
 
-    if (selectedChars === "" || lenght === "") {
+    if (selectedChars === "" || lenght <= "5") {
         alert('please Give all the information Lenght And Case');
         return;
     }
