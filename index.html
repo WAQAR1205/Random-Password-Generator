@@ -6,11 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="checkbox" name="f" id="check-uc" value="UpperCasw" checked>UpperCase
-    <input type="checkbox" name="" id="check-lc" placeholder="lowerCase" checked>LowerCase
-    <input type="checkbox" name="" id="check-no" placeholder="numberCase">
-    <input type="checkbox" name="" id="check-sp" placeholder="specialchar">
-    <button onclick="Generate()">Generate</button>
+    <label for="lenght">
+        Enter Lenght Of The Password
+    </label>
+    <input type="number" name="" id="lenght"><br>
+    <input type="checkbox" name="f" id="check-uc" value="UpperCasw" checked>UpperCase <br>
+    <input type="checkbox" name="" id="check-lc" placeholder="lowerCase" >LowerCase <br>
+    <input type="checkbox" name="" id="check-no" placeholder="numberCase">Numbers <br>
+    <input type="checkbox" name="" id="check-sp" placeholder="specialchar">Special <br>
+    <button onclick="Generate()">Generate</button> <br>
+    <input type="text" name="" id="password"> 
+    <button onclick="Copy()">Copy</button>
 </body>
 <script src="app.js"></script>
 </html>

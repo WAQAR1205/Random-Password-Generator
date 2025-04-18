@@ -6,12 +6,13 @@ var checkUc = document.getElementById('check-uc');
 var checkLc = document.getElementById('check-lc');
 var checkNo = document.getElementById('check-no');
 var checkSp = document.getElementById('check-sp');
-const lenght = 14;
-
+var password = document.getElementById('password');
 function Generate() {
+    const lenght = document.getElementById('lenght').value;
+    
     let pass = "";
     let selectedChars = "";
-
+    
     if (checkUc.checked) {
         selectedChars += upperCase;
         pass += upperCase[Math.floor(Math.random() * upperCase.length)];
@@ -29,14 +30,21 @@ function Generate() {
         pass += specialChar[Math.floor(Math.random() * specialChar.length)];
     }
 
-    if (selectedChars === "") {
-        alert('please check at least one option');
+    if (selectedChars === "" || lenght === "") {
+        alert('please Give all the information Lenght And Case');
         return;
     }
 
     while (pass.length < lenght) {
         pass += selectedChars[Math.floor(Math.random() * selectedChars.length)];
     }
-
-    console.log(pass);
+    console.log(pass.length);
+    password.value = pass
+}
+function Copy(){
+    // function copyFunction(id) {
+        var copyText = document.getElementById('password').value;
+        navigator.clipboard.writeText(copyText);
+        alert("copied")
+    //   }
 }
