@@ -7,8 +7,15 @@ var checkLc = document.getElementById('check-lc');
 var checkNo = document.getElementById('check-no');
 var checkSp = document.getElementById('check-sp');
 var password = document.getElementById('password');
+const lengthSlider = document.getElementById('length');
+const lengthValue = document.getElementById('lengthValue');
+const result = document.getElementById('result');
+
+lengthSlider.addEventListener('input', () => {
+    lengthValue.textContent = lengthSlider.value;
+  });
 function Generate() {
-    const lenght = document.getElementById('lenght').value || 8;
+    const lenght = +lengthSlider.value;
     
     let pass = "";
     let selectedChars = "";
@@ -30,9 +37,10 @@ function Generate() {
         pass += specialChar[Math.floor(Math.random() * specialChar.length)];
     }
 
-    if (selectedChars === "" || lenght <= "5") {
-        alert('please Give all the information Lenght And Case');
-        return;
+    if (selectedChars === "") {
+        // alert('please Give all the information Lenght And Case');
+        document.getElementById('result').textContent = "Select at least one option!";
+        // return;
     }
 
     while (pass.length < lenght) {
@@ -42,9 +50,7 @@ function Generate() {
     password.value = pass
 }
 function Copy(){
-    // function copyFunction(id) {
         var copyText = document.getElementById('password').value;
         navigator.clipboard.writeText(copyText);
         alert("copied")
-    //   }
 }

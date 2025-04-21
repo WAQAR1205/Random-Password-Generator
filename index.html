@@ -1,22 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <label for="lenght">
-        Enter Lenght Of The Password
-    </label>
-    <input type="number" name="" id="lenght" placeholder="Lenght 8 If User Not Enter Any Value PLease Do Not Enter Value 5 Or Less"><br>
-    <input type="checkbox" name="f" id="check-uc" value="UpperCasw" checked>UpperCase <br>
-    <input type="checkbox" name="" id="check-lc" placeholder="lowerCase" >LowerCase <br>
-    <input type="checkbox" name="" id="check-no" placeholder="numberCase">Numbers <br>
-    <input type="checkbox" name="" id="check-sp" placeholder="specialchar">Special <br>
-    <button onclick="Generate()">Generate</button> <br>
-    <input type="text" name="" id="password"> 
-    <button onclick="Copy()">Copy</button>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Generate a <br> <span>Randow Password</span></h1>
+            <!-- <br> -->
+            <div class="display">
+                <input type="text" name="" id="password" class="input-pass">
+                <img src="./images/download.png" alt="copy-icon" onclick="Copy()" />
+            </div>
+            <p id="result" class="error"></p>
+        <!-- <input type="range" name="" id="lenght" min="4" max="32" value="10"><br>
+            <input type="checkbox" name="f" id="check-uc" value="UpperCasw" checked>UpperCase <br>
+            <input type="checkbox" name="" id="check-lc" placeholder="lowerCase">LowerCase <br>
+            <input type="checkbox" name="" id="check-no" placeholder="numberCase">Numbers <br>
+            <input type="checkbox" name="" id="check-sp" placeholder="specialchar">Special <br> -->
+        <div class="generator">
+            <label for="length">Length: <span id="lengthValue">10</span></label>
+            <input type="range" id="length" min="6" max="32" value="10" />
+
+            <div>
+                <label for="length">Settings: </label>
+                <label>
+                    <input type="checkbox" id="check-uc" value="UpperCasw" checked />
+                    Include Uppercase
+                </label>
+                <label>
+                    <input type="checkbox" id="check-lc" placeholder="lowerCase" />
+                    Include Lowercase
+                </label>
+                <label>
+                    <input type="checkbox" id="check-no" placeholder="numberCase" />
+                    Include Numbers
+                </label>
+                <label>
+                    <input type="checkbox" id="check-sp" placeholder="specialchar" />
+                    Include Symbols
+                </label>
+            </div>
+
+        </div>
+
+        <button onclick="Generate()"><img src="./images/Generate.webp" alt="generate" /> Generate</button> <br>
+
+    </div>
 </body>
 <script src="app.js"></script>
+
 </html>
