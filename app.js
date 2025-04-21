@@ -47,7 +47,11 @@ function Generate() {
         pass += selectedChars[Math.floor(Math.random() * selectedChars.length)];
     }
     console.log(pass.length);
-    password.value = pass
+    if(selectedChars === ""){
+        password.value = ""
+    }else{
+        password.value = pass
+    }
 }
 function Copy(){
         var copyText = document.getElementById('password').value;
